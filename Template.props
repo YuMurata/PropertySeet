@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <Git>D:/Documents/GitHub/</Git>
+    <GoogleLib>$(Git)GoogleLib/</GoogleLib>
+    <MyLib>$(Git)MyLib/</MyLib>
+    <MyInclude>$(MyLib)Include/</MyInclude>
+    <MyLibrary>$(MyLib)LibraryMaker/$(Configuration)/</MyLibrary>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(MyInclude)/;$(GoogleLib)sparsehash-c11-master/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(MyLibrary);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="Git">
+      <Value>$(Git)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GoogleLib">
+      <Value>$(GoogleLib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MyLib">
+      <Value>$(MyLib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MyInclude">
+      <Value>$(MyInclude)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MyLibrary">
+      <Value>$(MyLibrary)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
