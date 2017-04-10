@@ -6,16 +6,19 @@
     <MyLib>$(Git)MyLib/</MyLib>
     <MyInclude>$(MyLib)Include/</MyInclude>
     <MyLibrary>$(MyLib)LibraryMaker/$(Configuration)/</MyLibrary>
+    <MachineLearning>$(Git)MachineLearning/</MachineLearning>
+    <MachineLearningInclude>$(MachineLearning)include/</MachineLearningInclude>
+    <MachineLearningLib>$(MachineLearning)lib/$(Configuration)/</MachineLearningLib>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(MyInclude);$(GoogleLib)sparsehash-c11-master/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MyInclude);$(GoogleLib)sparsehash-c11-master/;$(MachineLearningInclude);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(MyLibrary);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MyLibrary);$(MachineLearningLib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -31,6 +34,15 @@
     </BuildMacro>
     <BuildMacro Include="MyLibrary">
       <Value>$(MyLibrary)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MachineLearning">
+      <Value>$(MachineLearning)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MachineLearningInclude">
+      <Value>$(MachineLearningInclude)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MachineLearningLib">
+      <Value>$(MachineLearningLib)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>
