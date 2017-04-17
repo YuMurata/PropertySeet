@@ -5,7 +5,7 @@
     <GoogleLib>$(Git)GoogleLib/</GoogleLib>
     <MyLib>$(Git)MyLib/</MyLib>
     <MyInclude>$(MyLib)Include/</MyInclude>
-    <MyLibrary>$(MyLib)LibraryMaker/$(Configuration)/</MyLibrary>
+    <MyLibrary>$(MyLib)lib/$(Configuration)/</MyLibrary>
     <MachineLearning>$(Git)MachineLearning/</MachineLearning>
     <MachineLearningInclude>$(MachineLearning)include/</MachineLearningInclude>
     <MachineLearningLib>$(MachineLearning)lib/$(Configuration)/</MachineLearningLib>
